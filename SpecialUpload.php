@@ -48,8 +48,6 @@ class SpecialUpload extends \SpecialPage {
 			return false;
 		}
 
-		echo $dataurl;
-
 		$img = Thumbnail::open($dataurl);
 
 		global $wgMaxAvatarResolution;
@@ -88,6 +86,7 @@ class SpecialUpload extends \SpecialPage {
 		// Avatar directories
 		global $wgAvatarUploadDirectory;
 		$uploadDir = $wgAvatarUploadDirectory . '/' . $this->getUser()->getId() . '/';
+		echo $uploadDir;
 		@mkdir($uploadDir, 0777, true);
 
 		// We do this to convert format to png
