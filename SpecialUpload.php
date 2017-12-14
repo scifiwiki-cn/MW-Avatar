@@ -48,6 +48,8 @@ class SpecialUpload extends \SpecialPage {
 			return false;
 		}
 
+		echo $dataurl;
+
 		$img = Thumbnail::open($dataurl);
 
 		global $wgMaxAvatarResolution;
